@@ -2,6 +2,8 @@ package com.hencoder.hencoderpracticedraw1.practice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -26,5 +28,26 @@ public class Practice2DrawCircleView extends View {
 
 //        练习内容：使用 canvas.drawCircle() 方法画圆
 //        一共四个圆：1.实心圆 2.空心圆 3.蓝色实心圆 4.线宽为 20 的空心圆
+
+        // 1. 实心圆
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.BLACK);
+        canvas.drawCircle(250, 250, 200, paint);
+
+        // 2.空心圆
+        paint.setStyle(Paint.Style.STROKE);
+        canvas.drawCircle(750, 250, 200, paint);
+
+        // 3.蓝色实心圆
+        paint.setColor(Color.parseColor("#4A90E2"));
+        paint.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(250, 700, 200, paint);
+
+        // 4.线宽为 20 的空心圆
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(Color.BLACK);
+        paint.setStrokeWidth(80);
+        canvas.drawCircle(750, 700, 180, paint);
+
     }
 }
