@@ -41,7 +41,7 @@ public class Practice11PieChartView extends View {
             int angle = ANGLES[i];
             if (i == 0) {
                 canvas.save();
-                canvas.translate((float) (Math.cos(Math.toRadians(angle / 2f)) * translate), (float) (Math.sin(Math.toRadians(angle / 2f)) * translate));
+                canvas.translate((float) (Math.cos(Math.toRadians(startAngle + angle / 2f)) * translate), (float) (Math.sin(Math.toRadians(startAngle + angle / 2f)) * translate));
             }
             canvas.drawArc(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS,
                     getWidth() / 2 + RADIUS, getHeight() / 2 + RADIUS,
