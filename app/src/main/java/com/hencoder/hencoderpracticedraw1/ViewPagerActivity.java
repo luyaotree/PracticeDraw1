@@ -28,6 +28,7 @@ public class ViewPagerActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewpager);
+        list.add(LayoutInflater.from(this).inflate(R.layout.viewpager_item0, null));
         list.add(LayoutInflater.from(this).inflate(R.layout.viewpager_item, null));
         list.add(LayoutInflater.from(this).inflate(R.layout.viewpager_item2, null));
 
@@ -38,12 +39,12 @@ public class ViewPagerActivity extends Activity {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
                 Log.e("luy", "i=" + i + ",v=" + i + ",i1===  " + i1);
-                if (i == 0 && i1 > 200) {
+                if (i == 1 && i1 > 300) {
                     View view = list.get(i + 1);
                     Button btn = view.findViewById(R.id.btn);
                     btn.setVisibility(View.GONE);
                 }
-                if (i == 0 && i1 == 0) {
+                if (i == 1 && i1 == 1) {
                     View view = list.get(i + 1);
                     Button btn = view.findViewById(R.id.btn);
                     btn.setVisibility(View.VISIBLE);
